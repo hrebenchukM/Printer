@@ -20,12 +20,12 @@ class Printer
 {   
 	//„тоб  создалось ибо он вызвал конструктор дефолтный где пуста€ очередь и не позвол€л писать (10)
 	QueuePriority <PrinterTask,int> clients = QueuePriority <PrinterTask, int>(10);//ќтправленные задани€-создали ќчередь на печать (принимает «адачу на принт(Person) и размер приоритетности)
-	QueuePriority <PrinterTask, int> history = QueuePriority <PrinterTask, int>(25);//-создали ќчередь на историю печати (принимает «адачу на принт(Person) и размер приоритетности)
+	QueuePriority <PrinterTask, int> history = QueuePriority <PrinterTask, int>(25);//-создала ќчередь на историю печати (принимает «адачу на принт(Person) и размер приоритетности)
 
 
 public:
 
-	void addTask(PrinterTask p);////ƒобавили задачу в очередь 
+	void addTask(PrinterTask p);//ƒобавила задачу в очередь 
 	void print();//ѕечатает самое приоритетное задание
 	void printHistory();//ѕечатает всю историю 
 	
@@ -47,16 +47,16 @@ void Printer::print()
 	//ƒл€ времени
 	auto now = chrono::system_clock::now();
 	time_t end_time = chrono::system_clock::to_time_t(now);
-	mostWanted.setTime(ctime(&end_time));//»нициализируем нашим временем через сеттер
+	mostWanted.setTime(ctime(&end_time));//»нициализировала нашим временем через сеттер
 
-	history.Add(mostWanted, 0);//ƒобавл€ем в очередь истории приоритетную задачу с приоритет 0,то есть не используем его, чтоб очередь печаталась без приоритета
+	history.Add(mostWanted, 0);//ƒобавила в очередь истории приоритетную задачу с приоритет 0,то есть не используем его, чтоб очередь печаталась без приоритета
 }
 
 void Printer::printHistory()
 {
 	cout << endl << "History of prints:" << endl;
 	for (int i = 0; i < history.getQueueLength(); i++) {
-		cout << history.getElements()[i].ToString();//ѕечатаем в цикле историю строками
+		cout << history.getElements()[i].ToString();
 	}
 }
 
