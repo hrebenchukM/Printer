@@ -128,17 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Person.cpp" />
-    <ClCompile Include="Printer.cpp" />
-    <ClCompile Include="PriorityQueue.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Person.h" />
+    <ClInclude Include="PrinterTask.h" />
     <ClInclude Include="Printer.h" />
     <ClInclude Include="PriorityQueue.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Task.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

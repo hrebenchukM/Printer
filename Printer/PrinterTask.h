@@ -6,7 +6,7 @@
 #include "PriorityQueue.h"
 #include "Printer.h"
 
-class Person {
+class PrinterTask {//Задача на принт
 private:
     string name;
     int priority;
@@ -14,19 +14,26 @@ private:
     string time;
 
 public:
-    // Конструктор
-    Person(string& n, int p, const string& t, const string& tm)
-        : name(n), priority(p), text(t), time(tm) {}
+    // Конструктор по умолчанию и с 3 параметрами
+    PrinterTask() = default;
+    PrinterTask(string n, int p, string t): name(n), priority(p), text(t){}
 
-    // Методы получения значений
+    // Геттеры
    string getName() const { return name; }
     int getPriority() const { return priority; }
     string getText() const { return text; }
    string getTime() const { return time; }
 
+   //Сеттер
+   void setTime(string tm) { time = tm; }
+
+   // Метод ToString()
    string ToString()  {
        string result = "Name: " + name + ", Priority: " +to_string(priority) + ", Text: " + text + ", Time: " + time;
        return result;
    }
 };
+
+
+
 
